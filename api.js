@@ -1,12 +1,12 @@
-const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api";
-const API_VERSION = "1";
-const DATE = "latest"; // You can replace "latest" with a specific date if needed.
+const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1";
+
 
 const dropdowns = document.querySelectorAll(".dropdown select");
 const btn = document.querySelector("form button");
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select");
 const msg = document.querySelector(".msg");
+const currCode = "";
 
 for (let select of dropdowns) {
     for (let currCode in countryList) {
@@ -35,17 +35,20 @@ const updateExchangeRate = async () => {
         amount.value = "1";
     }
 
-    const endpoint = `${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
-    const URL = `${BASE_URL}@${DATE}/${API_VERSION}/${endpoint}`;
-
+    const endpoint = `currencies/${fromCurr.value.toLowerCase()}.json`;
+    const URL = `${BASE_URL}/${endpoint}`;
+    console.log(BASE_URL, URL)
     try {
         msg.innerText = "Fetching exchange rate...";
         let response = await fetch(URL);
-
+        console.log(response)
         if (!response.ok) throw new Error("Failed to fetch data");
 
         let data = await response.json();
-        let rate = data[toCurr.value.toLowerCase()];
+        console.log(data);
+        console.log("Hello", data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()]);
+        let rate = data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
+        console.log(rate)
 
         if (!rate) throw new Error("Exchange rate not available");
 
