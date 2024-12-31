@@ -13,6 +13,7 @@ for (let select of dropdowns) {
         let newOption = document.createElement("option");
         newOption.innerText = currCode;
         newOption.value = currCode;
+        newOption.setAttribute("class", "option1")
         if (select.name === "from" && currCode === "USD") {
             newOption.selected = "selected";
         } else if (select.name === "to" && currCode === "INR") {
