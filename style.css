@@ -1,106 +1,146 @@
+:root {
+    --bg-color: #1A1B41;       
+    --primary-color: #012f49;
+    --accent-color: #022632;   
+    --text-light: #F9F9F9;     
+    --text-dark: #1C1C1C;      
+    --border-color: #D3D3D3;   
+}
+
+
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #001427;
-  }
-  
-  .container {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 1rem;
-    min-height: 45vh;
-    width: 40vh;
-    border: 1px solid #000;
-    box-shadow: 0 0 5px #C1EEFF;
-  }
-  
-  form {
-    margin: 2rem 0 1rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  form select,
-  button,
-  input {
-    width: 100%;
-    border: none;
-    outline: none;
-    border-radius: 0.75rem;
-  }
-  
-  form input {
-    border: 1px solid lightgray;
-    font-size: 1rem;
-    height: 3rem;
-    padding-left: 0.5rem;
-  }
-  
-  .dropdown {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
-  }
-  
-  .dropdown i {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-  }
-  
-  .select-container img {
-    max-width: 1.7rem;
-    padding: .2em;
-  }
-  
-  .select-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 6rem;
-    padding: .2em;
-    border-radius: 0.5rem;
-    border: 1px solid lightgray;
-  }
-  
-  .option1{
-  background-color:#001427;
-  color:#fff;
-  padding: .2em;
-  margin:2em;
-  border-radius: none;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .from{
-    overflow:hidden;
-  }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: Arial, sans-serif;
+  color: var(--text-dark);
+}
 
-  .select-container select {
-    font-size: 1rem;
-    width: auto;
-  }
-  
-  .msg {
-    margin: 2rem 0 2rem 0;
-  }
-  
-  form button {
-    height: 3rem;
-    font-weight: 700;
-    background-color: #4F7CAC;
-    color: #001427;
-    font-size: 1.15rem;
-    cursor: pointer;
-  }
-  .aloo{
-    margin:0 .5em 0 .5em;
-  }
+.container {
+  background-color: var(--text-light);
+  padding: 2rem;
+  border-radius: 1rem;
+  min-height: 45vh;
+  width: 40vh;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
+h2 {
+  color: var(--text-dark);
+  text-align: center;
+}
+
+form {
+  margin: 2rem 0 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form select,
+button,
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 0.75rem;
+}
+
+form input {
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+  height: 3rem;
+  padding-left: 0.5rem;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.dropdown i {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: var(--primary-color);
+}
+
+.select-container img {
+  max-width: 1.7rem;
+  padding: 0.2em;
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  padding: 0.2em;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.select-container select {
+  font-size: 1rem;
+  width: auto;
+}
+
+.msg {
+  margin: 2rem 0 2rem 0;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+form button {
+  height: 3rem;
+  font-weight: 700;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  filter: blur(0.5px);
+}
+
+form button:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+  filter: blur(0px);
+}
+
+.aloo {
+  margin: 0 0.5em 0 0.5em;
+}
+
+.option1 {
+  background-color: var(--bg-color);
+  color: var(--text-light);
+  padding: 0.2em;
+  margin: 2em;
+}
+
+
+.love {
+  position: absolute;
+  bottom:1px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.love:active {
+  text-decoration: none;
+  color: #fff;
+}
